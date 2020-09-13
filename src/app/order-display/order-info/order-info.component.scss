@@ -1,0 +1,40 @@
+
+.heading {
+    font-size:3rem;
+}
+
+.para {
+    font-size:1.5rem;
+}
+
+.amt {
+    font-size:2rem;
+}
+
+.order__info {
+    //to have menu items one below the other
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    &__items{
+    
+        &__details {
+            font-size: 1.5rem;
+    
+            h3 {
+                margin-top: 1.5rem;
+            }
+        }
+    
+        &__img {
+            float: left;
+            width:15rem;
+            height:15rem;
+            padding: 1rem;
+            padding-left: 0px;
+        }
+    }
+} 
+
+    

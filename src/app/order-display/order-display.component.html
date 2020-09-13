@@ -1,0 +1,28 @@
+<h1 class="heading">Welcome to Appiness Pizzeria!</h1>
+<div class="container">
+  <!-- orders list view -->
+  <div class="order" *ngFor="let o of orders;let i=index" (click)="showOrderInfo($event,i)">
+    <!-- order status indicator -->
+    <img [src]="'../../assets/images/'+o.status+'.svg'" alt="status" class="order__status">
+    <div class="order__details">
+      <h3 class="order__details__name">
+        {{o.name}}
+      </h3>
+      <div>
+        <p><b>Number of items:</b> {{o.items.length}}</p>
+        <p><b>Total Amount:</b> {{getTotal(i)}}</p>
+        <p><b>Status:</b> {{getStatusString(i)}}</p>
+        <!-- change status button, disable it if status is ready to serve -->
+        <button class="order__details__button" [id]="'button'+i" [disabled]="o.status === 2"
+          (click)="o.status=o.status+1">{{o.status === 2?'Ready to Serve':'Change Status'}}</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- orders details popup -->
+<div class="details" id="info">
+  <div *ngIf="order" class="details__modal">
+    <a href="#" class="details__modal__close">&times;</a>
+    <app-order-info [order]="order"></app-order-info>
+  </div>
+</div>

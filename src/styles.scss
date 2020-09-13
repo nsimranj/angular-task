@@ -1,1 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
+// default styles
+*, 
+*::after, 
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+@font-face {
+    font-family: "Nanum Gothic";
+    src: url('./assets/fonts/Nanum_Gothic/NanumGothic-Regular.ttf');
+}
+
+@font-face {
+    font-family: "Nanum Gothic Bold";
+    src: url('./assets/fonts/Nanum_Gothic/NanumGothic-Bold.ttf');
+}
+
+body {
+    font-family: "Nanum Gothic";
+    font-weight: 400;
+    line-height: 1.7;
+    padding: 3rem;
+    box-sizing: border-box;
+}

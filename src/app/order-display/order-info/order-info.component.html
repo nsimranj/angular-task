@@ -1,0 +1,18 @@
+<!-- order details popup -->
+<h1 class="heading">{{order.name}}</h1>
+<h2>Delivery Address:</h2>
+<p class="para">{{order.address}}</p>
+<div class="order__info">
+  <!-- order items list -->
+  <div class="order__info__items" *ngFor="let oi of order.items;let i=index">
+    <img class="order__info__items__img" [src]="'../../assets/images/'+oi.name.split(' ').join('')+'.jpeg'"
+      [alt]="oi.name">
+    <span class="order__info__items__details">
+      <h3>{{oi.name}}</h3>
+      <p class="para">Size: {{oi.size}}</p>
+      <p class="para">Qty: {{oi.qty}}</p>
+      <p class="para">Unit Price: {{oi.price}}</p>
+    </span>
+</div>
+</div>
+<h4 class="amt">Total Amount: <b>{{total}}</b> </h4>
